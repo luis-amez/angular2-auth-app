@@ -26,6 +26,9 @@ export class AuthLoginComponent {
   login() {
     this.error = null;
     this.auth.login(this.user)
-      .subscribe(() => this.router.navigate(['/tasks']));
+      .subscribe(
+        () => this.router.navigate(['/tasks']),
+        (err) => this.error = err
+      );
   }
 }
