@@ -1,0 +1,17 @@
+<article class="task-card" [ngClass]="{'is-empty': !task}">
+  <p class="text">{{task && task.name}}</p>
+  <footer>
+    <div class="change-priority">
+      <button (click)="handleUpClick()" [disabled]="!task">Up</button>
+      <button (click)="handleDownClick()" [disabled]="!task">Down</button>
+    </div>
+    <div class="change-status">
+      <button (click)="handleBackClick()" [disabled]="!task" [hidden]="task && task.status === 0">Back</button>
+      <button (click)="handleForwardClick()" [disabled]="!task" [hidden]="task && task.status === 2">Forward</button>
+    </div>
+    <div class="delete">
+      <button (click)="handleDeleteClick()" [disabled]="!task">Delete</button>
+    </div>
+    <a [routerLink]="task ? ['/tasks', task.id] : []">view details</a>
+  </footer>
+</article>

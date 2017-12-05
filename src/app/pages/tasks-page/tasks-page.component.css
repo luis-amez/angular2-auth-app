@@ -1,0 +1,8 @@
+@media (min-width: 640px) {
+  .task-container {
+    display: flex;
+  }
+  .column-container {
+    flex: 1 0 auto;
+  }
+}
